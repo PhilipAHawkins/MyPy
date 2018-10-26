@@ -11,7 +11,7 @@ while page_no < 9:
     url = "https://en.wikipedia.org/wiki/List_of_wars_"
     letter = time_groups[page_no]
     r = pd.read_html(url + letter)
-    df = pd.concat(r, ignore_index=True) # not quite.
+    df = pd.concat(r, ignore_index=True)
     writer = pd.ExcelWriter(letter + '.xlsx')
     df.to_excel(writer)
     writer.save()
